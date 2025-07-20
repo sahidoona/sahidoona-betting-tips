@@ -3,106 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>⚽ Daily Football Tips | Sahidoona</title>
-  <meta name="description" content="100% Original football tips daily. Join VIP WhatsApp group.">
-  <meta name="keywords" content="betting tips, football, sahidoona, predictions">
-  <meta name="google-adsense-account" content="ca-pub-1835470952853856" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1835470952853856" crossorigin="anonymous"></script>
+  <title>Sahidoona Football Tips</title>
+  <meta name="description" content="Free football tips and expert predictions. Join Sahidoona VIP WhatsApp group today.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #121212;
-      color: #eee;
+      font-family: 'Nunito', sans-serif;
+      background: #f5f5f5;
       margin: 0;
       padding: 0;
+      color: #222;
     }
     header {
-      background: #1f1f1f;
-      padding: 20px;
+      background: #2c3e50;
+      color: white;
+      padding: 30px 15px;
       text-align: center;
-      border-bottom: 2px solid #00ff99;
     }
     header h1 {
       margin: 0;
-      color: #00ff99;
+      font-size: 28px;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 16px;
     }
     .container {
+      max-width: 700px;
+      margin: 30px auto;
       padding: 20px;
     }
-    .tip {
-      background: #1e1e1e;
-      padding: 15px;
+    .card {
+      background: white;
       border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0,255,153,0.1);
     }
-    .tip h3 {
-      margin: 0 0 10px;
+    .card h3 {
+      margin-top: 0;
+      color: #2980b9;
     }
-    .floating-btn {
+    .card p {
+      margin: 6px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ecf0f1;
+      font-size: 13px;
+      color: #777;
+    }
+    .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
       z-index: 99;
     }
-    .floating-btn a {
-      background-color: #25D366;
+    .whatsapp-float a {
+      background: #25D366;
       color: white;
-      padding: 10px 15px;
-      border-radius: 30px;
+      padding: 12px 20px;
       text-decoration: none;
       font-size: 14px;
-      text-align: center;
-      display: inline-block;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #181818;
-      font-size: 12px;
-      color: #999;
+      border-radius: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🔥 Sahidoona Tips - Today</h1>
-    <p>Free & VIP Predictions</p>
-  </header>
 
-  <div class="container" id="tips-container">
-    <!-- Tips inserted by JS -->
-  </div>
+<header>
+  <h1>⚽ Sahidoona Tips</h1>
+  <p>Daily Free & VIP Football Predictions</p>
+</header>
 
-  <!-- WhatsApp Button Only -->
-  <div class="floating-btn">
-    <a href="https://wa.me/254706654969?text=I'm%20interested%20in%20VIP%20betting%20tips" target="_blank">Join WhatsApp 💬</a>
-  </div>
+<div class="container" id="tips-container">
+  <!-- Predictions will load here -->
+</div>
 
-  <footer>
-    &copy; 2025 Sahidoona | All Rights Reserved
-  </footer>
+<div class="whatsapp-float">
+  <a href="https://wa.me/254706654969?text=Hi%20Sahidoona%2C%20I'm%20interested%20in%20VIP%20betting%20tips!" target="_blank">
+    💬 Join WhatsApp VIP
+  </a>
+</div>
 
-  <script>
-    const tips = [
-      { match: "Liverpool vs Man City", prediction: "BTTS", reason: "Both scoring form" },
-      { match: "Chelsea vs Arsenal", prediction: "Over 2.5", reason: "High scoring derby" },
-      { match: "Real Madrid vs Sevilla", prediction: "1X", reason: "Madrid unbeaten at home" }
-    ];
+<footer>
+  &copy; 2025 Sahidoona. All rights reserved.
+</footer>
 
-    const container = document.getElementById('tips-container');
+<script>
+  const tips = [
+    {
+      match: "Liverpool vs Man City",
+      prediction: "Both Teams To Score",
+      reason: "Both teams have scored in 8 of their last 9 encounters."
+    },
+    {
+      match: "PSG vs Lyon",
+      prediction: "Over 2.5 Goals",
+      reason: "Both sides average high goals per match."
+    },
+    {
+      match: "Juventus vs Napoli",
+      prediction: "1X Double Chance",
+      reason: "Juventus unbeaten in last 5 home games."
+    }
+  ];
 
-    tips.forEach(tip => {
-      const div = document.createElement('div');
-      div.className = 'tip';
-      div.innerHTML = `
-        <h3>${tip.match}</h3>
-        <p><strong>Prediction:</strong> ${tip.prediction}</p>
-        <p><em>${tip.reason}</em></p>
-      `;
-      container.appendChild(div);
-    });
-  </script>
+  const container = document.getElementById('tips-container');
+  tips.forEach(tip => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `
+      <h3>${tip.match}</h3>
+      <p><strong>Prediction:</strong> ${tip.prediction}</p>
+      <p><em>${tip.reason}</em></p>
+    `;
+    container.appendChild(div);
+  });
+</script>
+
 </body>
 </html>
