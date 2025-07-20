@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>⚽ Daily Football Tips | Sahidoona</title>
-  <meta name="description" content="100% Original football tips daily. Join VIP WhatsApp or Telegram group.">
+  <meta name="description" content="100% Original football tips daily. Join VIP WhatsApp group.">
   <meta name="keywords" content="betting tips, football, sahidoona, predictions">
   <meta name="google-adsense-account" content="ca-pub-1835470952853856" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
@@ -40,18 +40,11 @@
     .tip h3 {
       margin: 0 0 10px;
     }
-    .countdown {
-      font-size: 14px;
-      color: #ffa500;
-    }
     .floating-btn {
       position: fixed;
       bottom: 20px;
       right: 20px;
       z-index: 99;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
     }
     .floating-btn a {
       background-color: #25D366;
@@ -61,9 +54,7 @@
       text-decoration: none;
       font-size: 14px;
       text-align: center;
-    }
-    .floating-btn a.telegram {
-      background-color: #0088cc;
+      display: inline-block;
     }
     footer {
       text-align: center;
@@ -77,17 +68,16 @@
 <body>
   <header>
     <h1>🔥 Sahidoona Tips - Today</h1>
-    <p>Free & VIP Predictions with Match Timers</p>
+    <p>Free & VIP Predictions</p>
   </header>
 
   <div class="container" id="tips-container">
     <!-- Tips inserted by JS -->
   </div>
 
-  <!-- WhatsApp & Telegram Buttons -->
+  <!-- WhatsApp Button Only -->
   <div class="floating-btn">
     <a href="https://wa.me/254706654969?text=I'm%20interested%20in%20VIP%20betting%20tips" target="_blank">Join WhatsApp 💬</a>
-    <a href="https://t.me/sahidoonatips" target="_blank" class="telegram">Join Telegram 📢</a>
   </div>
 
   <footer>
@@ -96,22 +86,10 @@
 
   <script>
     const tips = [
-      { match: "Liverpool vs Man City", prediction: "BTTS", reason: "Both scoring form", kickoff: "2025-07-22T18:30:00" },
-      { match: "Chelsea vs Arsenal", prediction: "Over 2.5", reason: "High scoring derby", kickoff: "2025-07-22T21:00:00" },
-      { match: "Real Madrid vs Sevilla", prediction: "1X", reason: "Madrid unbeaten at home", kickoff: "2025-07-22T23:00:00" }
+      { match: "Liverpool vs Man City", prediction: "BTTS", reason: "Both scoring form" },
+      { match: "Chelsea vs Arsenal", prediction: "Over 2.5", reason: "High scoring derby" },
+      { match: "Real Madrid vs Sevilla", prediction: "1X", reason: "Madrid unbeaten at home" }
     ];
-
-    function countdown(dateStr) {
-      const now = new Date().getTime();
-      const kickoff = new Date(dateStr).getTime();
-      const distance = kickoff - now;
-
-      if (distance <= 0) return "Kicked off";
-
-      const hours = Math.floor(distance / (1000 * 60 * 60));
-      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      return `${hours}h ${mins}m to kickoff`;
-    }
 
     const container = document.getElementById('tips-container');
 
@@ -122,16 +100,9 @@
         <h3>${tip.match}</h3>
         <p><strong>Prediction:</strong> ${tip.prediction}</p>
         <p><em>${tip.reason}</em></p>
-        <p class="countdown">${countdown(tip.kickoff)}</p>
       `;
       container.appendChild(div);
     });
-
-    setInterval(() => {
-      document.querySelectorAll('.countdown').forEach((el, i) => {
-        el.textContent = countdown(tips[i].kickoff);
-      });
-    }, 60000);
   </script>
 </body>
 </html>
