@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daily Betting Tips - Sahidoona</title>
+  <meta name="description" content="Original football predictions daily. Join our VIP group via WhatsApp.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Google AdSense Auto Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1835470952853856" crossorigin="anonymous"></script>
 
   <style>
@@ -23,7 +27,7 @@
     main {
       padding: 20px;
     }
-    .tip, .vip-tip {
+    .tip {
       background: white;
       border: 1px solid #ddd;
       margin-bottom: 15px;
@@ -31,11 +35,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-    .vip-tip {
-      background: #fffbea;
-      border-left: 5px solid gold;
-    }
-    .tip h3, .vip-tip h3 {
+    .tip h3 {
       margin-top: 0;
     }
     footer {
@@ -44,9 +44,24 @@
       background: #eee;
       font-size: 14px;
     }
-    h2 {
-      margin-top: 40px;
-      color: #333;
+    .whatsapp-btn {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .whatsapp-btn a {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-block;
+    }
+    .whatsapp-btn p {
+      font-size: 13px;
+      color: #555;
+      margin-top: 6px;
     }
   </style>
 </head>
@@ -56,13 +71,17 @@
     <p>100% Original Daily Predictions</p>
   </header>
 
-  <main>
-    <h2>🎯 Free Tips</h2>
-    <div id="tips-container"></div>
-
-    <h2>🌟 VIP Tips</h2>
-    <div id="vip-tips-container"></div>
+  <main id="tips-container">
+    <!-- Tips will be loaded here -->
   </main>
+
+  <!-- WhatsApp VIP Subscription Button -->
+  <div class="whatsapp-btn">
+    <a href="https://wa.me/254706654969?text=Hello%2C%20I%20want%20to%20join%20the%20VIP%20betting%20tips%20group" target="_blank">
+      📲 Join VIP WhatsApp Group
+    </a>
+    <p>Get premium tips directly on your WhatsApp daily</p>
+  </div>
 
   <footer>
     <p>&copy; 2025 Sahidoona. All rights reserved.</p>
@@ -83,25 +102,11 @@
       {
         match: "Juventus vs AC Milan",
         prediction: "Correct Score: 2-1",
-        reason: "Juventus strong at home, Milan struggling."
-      }
-    ];
-
-    const vipTips = [
-      {
-        match: "Bayern Munich vs Dortmund",
-        prediction: "Both Teams to Score & Over 2.5",
-        reason: "High-scoring rivalry, both sides in good scoring form."
-      },
-      {
-        match: "PSG vs Marseille",
-        prediction: "PSG Win & Over 3.5",
-        reason: "PSG dominating at home, Marseille weak away."
+        reason: "Historically tight matches, but Juventus home advantage gives them edge."
       }
     ];
 
     const container = document.getElementById('tips-container');
-    const vipContainer = document.getElementById('vip-tips-container');
 
     tips.forEach(tip => {
       const div = document.createElement('div');
@@ -112,17 +117,6 @@
         <p><em>Reason:</em> ${tip.reason}</p>
       `;
       container.appendChild(div);
-    });
-
-    vipTips.forEach(tip => {
-      const div = document.createElement('div');
-      div.className = 'vip-tip';
-      div.innerHTML = `
-        <h3>${tip.match}</h3>
-        <p><strong>VIP Prediction:</strong> ${tip.prediction}</p>
-        <p><em>Reason:</em> ${tip.reason}</p>
-      `;
-      vipContainer.appendChild(div);
     });
   </script>
 </body>
