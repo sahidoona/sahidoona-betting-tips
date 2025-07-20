@@ -4,11 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daily Betting Tips - Sahidoona</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Google AdSense Auto Ads -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1835470952853856"
-    crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1835470952853856" crossorigin="anonymous"></script>
 
   <style>
     body {
@@ -27,7 +23,7 @@
     main {
       padding: 20px;
     }
-    .tip {
+    .tip, .vip-tip {
       background: white;
       border: 1px solid #ddd;
       margin-bottom: 15px;
@@ -35,7 +31,11 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-    .tip h3 {
+    .vip-tip {
+      background: #fffbea;
+      border-left: 5px solid gold;
+    }
+    .tip h3, .vip-tip h3 {
       margin-top: 0;
     }
     footer {
@@ -43,6 +43,10 @@
       padding: 10px;
       background: #eee;
       font-size: 14px;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #333;
     }
   </style>
 </head>
@@ -52,8 +56,12 @@
     <p>100% Original Daily Predictions</p>
   </header>
 
-  <main id="tips-container">
-    <!-- Tips will be loaded here -->
+  <main>
+    <h2>🎯 Free Tips</h2>
+    <div id="tips-container"></div>
+
+    <h2>🌟 VIP Tips</h2>
+    <div id="vip-tips-container"></div>
   </main>
 
   <footer>
@@ -75,11 +83,25 @@
       {
         match: "Juventus vs AC Milan",
         prediction: "Correct Score: 2-1",
-        reason: "Historically tight matches, but Juventus home advantage gives them edge."
+        reason: "Juventus strong at home, Milan struggling."
+      }
+    ];
+
+    const vipTips = [
+      {
+        match: "Bayern Munich vs Dortmund",
+        prediction: "Both Teams to Score & Over 2.5",
+        reason: "High-scoring rivalry, both sides in good scoring form."
+      },
+      {
+        match: "PSG vs Marseille",
+        prediction: "PSG Win & Over 3.5",
+        reason: "PSG dominating at home, Marseille weak away."
       }
     ];
 
     const container = document.getElementById('tips-container');
+    const vipContainer = document.getElementById('vip-tips-container');
 
     tips.forEach(tip => {
       const div = document.createElement('div');
@@ -90,6 +112,17 @@
         <p><em>Reason:</em> ${tip.reason}</p>
       `;
       container.appendChild(div);
+    });
+
+    vipTips.forEach(tip => {
+      const div = document.createElement('div');
+      div.className = 'vip-tip';
+      div.innerHTML = `
+        <h3>${tip.match}</h3>
+        <p><strong>VIP Prediction:</strong> ${tip.prediction}</p>
+        <p><em>Reason:</em> ${tip.reason}</p>
+      `;
+      vipContainer.appendChild(div);
     });
   </script>
 </body>
